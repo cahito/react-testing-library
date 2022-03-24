@@ -2,7 +2,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
-import claudio from '../services/claudio';
+import claudio from './claudio';
 
 describe('Teste do componente "App.js"', () => {
   it('Testa se o topo da aplicação contém um conjunto fixo de links de navegação', () => {

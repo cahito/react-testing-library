@@ -3,7 +3,9 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import App from '../App';
 import { FavoritePokemons } from '../components';
-import claudio from '../services/claudio';
+import claudio from './claudio';
+
+const THREE = 3;
 
 function getMoreDetailsButton() {
   const moreDetailsButton = screen.getByRole('link', { name: /more details/i });
@@ -19,7 +21,6 @@ function getTypeButton(param) {
   const typeButton = screen.getByRole('button', { name: param });
   return typeButton;
 }
-const THREE = 3;
 
 describe('Teste do componente "FavoritePokemons.js"', () => {
   it('Testa se é exibido na tela a mensagem No favorite pokemon found'

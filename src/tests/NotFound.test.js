@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import React from 'react';
 import NotFound from '../components/NotFound';
-import claudio from '../services/claudio';
+import claudio from './claudio';
 
 const SRC_URL = 'https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif';
 
