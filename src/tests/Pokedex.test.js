@@ -16,17 +16,23 @@ describe('Teste do componente "Pokedex.js"', () => {
 
   /* it('Testa ', () => {
 
-  });
+  }); */
 
   it('Testa se é mostrado apenas um Pokémon por vez', () => {
+    claudio(<App />);
+    const images = screen.getAllByRole('img', { name: /sprite/i });
+
+    expect(images.length).toBe(1);
+  });
+
+  /* it('Testa ', () => {
 
   });
 
-  it('Testa ', () => {
+  it('Testa se a Pokédex contém um botão para resetar o filtro', () => {
+    claudio(<App />);
+    const buttonAll = screen.getAllByText('All');
 
-  });
-
-  it('Testa ', () => {
-
+    expect(buttonAll.length).toBe(1);
   }); */
 });
