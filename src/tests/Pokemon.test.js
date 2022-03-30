@@ -13,7 +13,7 @@ const goToDetailsLink = () => {
 };
 
 describe('Teste do componente "Pokemon.js"', () => {
-  test('Testa se é renderizado um card com as informações de determinado pokémon', () => {
+  it('Testa se é renderizado um card com as informações de determinado pokémon', () => {
     claudio(<App />);
     const pokemonName = screen.getByText('Pikachu');
     const pokemonType = screen.getAllByText('Electric');
@@ -26,7 +26,7 @@ describe('Teste do componente "Pokemon.js"', () => {
     expect(pokemonImage).toHaveAttribute('src', SRC_URL);
   });
 
-  test('Testa se o card do Pokémon indicado na Pokédex contém um'
+  it('Testa se o card do Pokémon indicado na Pokédex contém um'
   + 'link de navegação para exibir detalhes deste Pokémon', () => {
     claudio(<App />);
     const moreDetailsLink = screen.getByRole('link', { name: /more details/i });
@@ -34,7 +34,7 @@ describe('Teste do componente "Pokemon.js"', () => {
     expect(moreDetailsLink).toBeDefined();
   });
 
-  test('Testa se ao clicar no link de navegação do Pokémon, é feito o '
+  it('Testa se ao clicar no link de navegação do Pokémon, é feito o '
   + 'redirecionamento da aplicação para a página de detalhes de Pokémon', () => {
     claudio(<App />);
     goToDetailsLink();
@@ -44,7 +44,7 @@ describe('Teste do componente "Pokemon.js"', () => {
     expect(pokemonDetails).toBeDefined();
   });
 
-  test('Testa também se a URL exibida no navegador muda para /pokemon/'
+  it('Testa também se a URL exibida no navegador muda para /pokemon/'
   + '<id>, onde <id> é o id do Pokémon cujos detalhes se deseja ver', () => {
     const { history } = claudio(<App />);
     goToDetailsLink();
@@ -52,7 +52,7 @@ describe('Teste do componente "Pokemon.js"', () => {
     expect(history.location.pathname).toBe('/pokemons/25');
   });
 
-  test('Testa se existe um ícone de estrela nos Pokémons favoritados', () => {
+  it('Testa se existe um ícone de estrela nos Pokémons favoritados', () => {
     claudio(<App />);
     goToDetailsLink();
 
