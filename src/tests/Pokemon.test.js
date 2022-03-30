@@ -5,6 +5,7 @@ import claudio from './claudio';
 import App from '../App';
 
 const SRC_URL = 'https://cdn2.bulbagarden.net/upload/b/b2/Spr_5b_025_m.png';
+const SRC_ICON = '/star-icon.svg';
 
 const goToDetailsLink = () => {
   const moreDetailsLink = screen.getByRole('link', { name: /more details/i });
@@ -61,5 +62,6 @@ describe('Teste do componente "Pokemon.js"', () => {
     const starIcon = screen.getByRole('img', { name: /is marked as favorite/i });
 
     expect(starIcon).toBeDefined();
+    expect(starIcon).toHaveAttribute('src', SRC_ICON);
   });
 });
